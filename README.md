@@ -1,4 +1,4 @@
-# ${1:n-bodyjs}
+# n-bodyjs
 
 Efficient and accurate javascript to model the interaction between n-bodies in an environment. 
 Currently, the program only implements the naive solution to the n-body problem, but we are in the 
