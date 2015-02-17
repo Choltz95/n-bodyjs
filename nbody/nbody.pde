@@ -6,7 +6,7 @@ float G              = 0.5;
 float lastTime       = 0.0;
 boolean initialSpin  = false;
 
-float threshold      = 2.0; // lower is slower and closer to the O(n), higher is faster but less accurate
+float threshold      = 2.0; // lower is slower and closer to the O(n^2), higher is faster but less accurate. Used for Barnes-Hut Estimation
 float brightness     = 2.0; // lower is dimmer
 
 ArrayList<Particle> particles = new ArrayList<Particle>(num);
