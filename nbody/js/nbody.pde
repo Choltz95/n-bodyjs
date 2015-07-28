@@ -1,5 +1,4 @@
-// ### parameters
-int size = 1000;
+int spread = 1000;
 int fps = 30;
 int num = 50; 
 float G = 0.5;
@@ -21,10 +20,10 @@ void setup(){
    particles.add(new Particle(new PVector(random(380,420), random(330,370))));
   }*/
   
-    addParticles(
+  addParticles(
     num, // how many
     new PVector(400, 350), // where
-    size/2, // spread
+    spread/2, // spread
     0 // tangential velocity
   );
 }
@@ -80,5 +79,37 @@ void computeBodies(){
     }
     p.move();
     set((int)p.pos.x, (int)p.pos.y, color(p.Pcolor[0], p.Pcolor[1], p.Pcolor[2]));
+  }
+}
+
+class Particle{
+  float mass;
+  int Pcolor [];
+  PVector pos;
+  PVector vel;
+  Particle(float mass, int Pcolor[], PVector pos, PVector vel){
+    this.mass  = mass;
+    this.Pcolor = Pcolor;
+    this.pos   = pos;
+    this.vel   = vel;
+  }
+  
+  void move(){
+    // add velocity to position
+    this.pos.add(this.vel);
+  }
+
+  void constr(float min, float max){
+    // constrain particle position to window boundary
+    this.pos.x = constrain(this.pos.x, min, max);
+    this.pos.y = constrain(this.pos.y, min, max);
+  }
+
+  float x(){
+    return this.pos.x;
+  }
+
+  float y(){
+    return this.pos.y;
   }
 }
