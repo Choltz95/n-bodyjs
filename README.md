@@ -10,8 +10,6 @@ TODO: set up webpage with processing.js
 
 ## Usage
 
-TODO: Write usage instructions
-
 ## Contributing
 
 1. Fork it!
